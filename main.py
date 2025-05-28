@@ -9,7 +9,10 @@ app = FastAPI()
 # Allow frontend on Vercel to connect
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Replace with your frontend URL for production
+    allow_origins=[
+        "http://localhost:3000",  # React local dev server
+        "https://derma-scan-ai.vercel.app"  # replace with your deployed React app URL
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
